@@ -157,7 +157,8 @@ def create_tracklist(tracks, width, height):
         draw.text((x_text, (y_text + font.size)), line, font=font, fill=(0, 0, 0), italic=True)
 
         if i % 2 == 1:
-            y_text += font.size * 3  # Additional space between pairs of tracks
+            # Add additional space between pairs of tracks
+            y_text += font.size * 3 
     
     return image
 
@@ -168,9 +169,9 @@ def download_image(url):
     return img
 
 def create_collage(tracks, width, height):
-    """Needs rewrite to work for different numbers of images"""
+    """Compiles track covers for the back cover of the cd-art"""
     collage = Image.new('RGB', (width, height))
-    img_size = width // 5  # Assuming 5 columns
+    img_size = width // 5  # Could change to change number of columns
     x_offset, y_offset = 0, 0
 
     for track in tracks:
